@@ -70,15 +70,15 @@
         }
       });
       thisBooksList.filterWrapper.addEventListener('click', function (event) {
-        const clickedElementTwo = event.target;
-        if (clickedElementTwo.tagName === 'INPUT', clickedElementTwo.type === 'checkbox', clickedElementTwo.name === 'filter') {
-          if (clickedElementTwo.checked) {
-            thisBooksList.filtersList.push(clickedElementTwo.value);
+        const clickedElement = event.target;
+        if (clickedElement.tagName === 'INPUT' && clickedElement.type === 'checkbox' && clickedElement.name === 'filter') {
+          if (clickedElement.checked) {
+            thisBooksList.filtersList.push(clickedElement.value);
             console.log(thisBooksList.filtersList);
             thisBooksList.filter();
           } else {
-            const indexTwo = thisBooksList.filtersList.indexOf(clickedElementTwo.value);
-            thisBooksList.filtersList.splice(indexTwo, 1);
+            const index = thisBooksList.filtersList.indexOf(clickedElement.value);
+            thisBooksList.filtersList.splice(index, 1);
             console.log(thisBooksList.filtersList);
             thisBooksList.filter();
           }
